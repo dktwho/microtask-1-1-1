@@ -1,21 +1,29 @@
 import React from 'react';
 import {Currentbankomat} from "./Currentbankomat";
+import {MoneyType} from "./App";
 
 export type CityPropsType = {
-    data: any
+    data: MoneyType[];
 }
-export const City = (props: CityPropsType) => {
+export const City = ({data}: CityPropsType) => {
 
     // <Currentbankomat
     //     key={index}
     //     money={el}
     // />
 
+
     return (
         <div>
-            <div>1111</div>
-            <div>2222</div>
+            {data.map((el: MoneyType, index: number) => {
+                return (
+                    <React.Fragment key={index}>
+                        <div>{el.banknotes}</div>
+                        <div>{el.value}</div>
+                    </React.Fragment>
+                )
 
+            })}
         </div>
     );
 };

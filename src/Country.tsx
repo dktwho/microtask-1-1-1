@@ -6,7 +6,7 @@ export type CountryPropsType = {
     data: MoneyType[];
     setFilterValue: (filterValue: BanknotesType) => void
 }
-export const Country = ({setFilterValue}:CountryPropsType ) => {
+export const Country = ({setFilterValue, data}:CountryPropsType ) => {
     const setAll = () => {
         setFilterValue('All')
     }
@@ -24,7 +24,7 @@ export const Country = ({setFilterValue}:CountryPropsType ) => {
             <button onClick={() => setAll()}>All</button>
             <button onClick={() => setDollars()}>Dollars</button>
             <button onClick={() => setRUBLES()}>RUBLES</button>
-            <City data={'give some prop'}/>
+            <City data={data}/>
         </div>
     );
 };
