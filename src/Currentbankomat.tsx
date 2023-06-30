@@ -9,11 +9,15 @@ export const Currentbankomat = ({money}: CurrentBankomatType) => {
     return (
         money.banknotes === 'Dollars'
             ? <BanknoteGreen>
-                {money.banknotes}
+                <Name>{money.banknotes}</Name>
+                <Nominal>{money.value}</Nominal>
+                <SerialNumber>{money.number}</SerialNumber>
             </BanknoteGreen>
             :
             <BanknoteBlue>
-                {money.banknotes}
+                <Name>{money.banknotes}</Name>
+                <Nominal>{money.value}</Nominal>
+                <SerialNumber>{money.number}</SerialNumber>
             </BanknoteBlue>
     );
 };
@@ -30,4 +34,23 @@ const BanknoteBlue = styled.div`
   width: 300px;
   height: 150px;
   margin: 10px;
+`
+
+const Name = styled.span`
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+`
+
+const Nominal = styled.span`
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+`
+
+const SerialNumber = styled.span`
+  display: flex;
+  justify-content: center;
+  color: green;
+  font-size: 20px;
 `
