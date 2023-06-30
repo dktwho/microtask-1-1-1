@@ -1,31 +1,32 @@
 import React from 'react';
-import {Currentbankomat} from "./Currentbankomat";
 import {MoneyType} from "./App";
+import styled, {css} from 'styled-components'
+import {Currentbankomat} from "./Currentbankomat";
 
 export type CityPropsType = {
     data: MoneyType[];
 }
 export const City = ({data}: CityPropsType) => {
-
-    // <Currentbankomat
-    //     key={index}
-    //     money={el}
-    // />
+    const mappedMoney = data.map((el: MoneyType, index: number) => (
+            <Currentbankomat
+                key={index}
+                money={el}
+            />
+        )
+    )
 
 
     return (
         <div>
-            {data.map((el: MoneyType, index: number) => {
-                return (
-                    <React.Fragment key={index}>
-                        <div>{el.banknotes}</div>
-                        <div>{el.value}</div>
-                        <div>{el.number}</div>
-                    </React.Fragment>
-                )
-
-            })}
+            <Wrapper>{mappedMoney}</Wrapper>
         </div>
     );
 };
 
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 30px;
+`

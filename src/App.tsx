@@ -22,8 +22,7 @@ let defaultMoney: MoneyType[] = [
 
 export const moneyFilter = (money: MoneyType[], filter: BanknotesType): MoneyType[] => {
     if (filter === 'All') return defaultMoney
-    return  money.filter(el => el.banknotes === filter)
-
+    return money.filter(el => el.banknotes === filter)
 }
 
 function App() {
@@ -31,14 +30,12 @@ function App() {
     const [filterValue, setFilterValue] = useState<BanknotesType>('All')
     const filteredMoney = moneyFilter(money, filterValue)
 
-
     return (
         <div className="App">
             <Country
                 data={filteredMoney}
                 setFilterValue={setFilterValue}
             />
-
         </div>
     );
 }
