@@ -20,6 +20,7 @@ export const City = ({data}: CityPropsType) => {
                     <React.Fragment key={index}>
                         <div>{el.banknotes}</div>
                         <div>{el.value}</div>
+                        <div>{el.number}</div>
                     </React.Fragment>
                 )
 
