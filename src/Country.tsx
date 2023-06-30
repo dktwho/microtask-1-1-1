@@ -15,15 +15,15 @@ export const Country = ({setFilterValue}:CountryPropsType ) => {
         setFilterValue('Dollars')
     }
 
-    const setRUBLS = () => {
+    const setRUBLES = () => {
         setFilterValue('RUBLES')
     }
 
     return (
         <div>
-            <button onClick={() => {'all'}}>All</button>
-            <button onClick={() => {'dollars'}}>Dollars</button>
-            <button onClick={() => {'RUBLES'}}>RUBLS</button>
+            <button onClick={() => setAll()}>All</button>
+            <button onClick={() => setDollars()}>Dollars</button>
+            <button onClick={() => setRUBLES()}>RUBLES</button>
             <City data={'give some prop'}/>
         </div>
     );
