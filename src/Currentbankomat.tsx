@@ -27,6 +27,7 @@ const BanknoteGreen = styled.div`
   width: 300px;
   height: 150px;
   margin: 10px;
+  border-radius: 30px;
 `
 
 const BanknoteBlue = styled.div`
@@ -34,12 +35,14 @@ const BanknoteBlue = styled.div`
   width: 300px;
   height: 150px;
   margin: 10px;
+  border-radius: 30px;
 `
 
 const Name = styled.span`
   display: flex;
   justify-content: center;
   font-size: 30px;
+  margin-top: 10px;
 `
 
 const Nominal = styled.span`
@@ -53,4 +56,5 @@ const SerialNumber = styled.span`
   justify-content: center;
   color: green;
   font-size: 20px;
+  margin: 15px;
 `
