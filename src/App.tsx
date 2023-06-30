@@ -9,7 +9,7 @@ export type MoneyType = {
   number: string;
 }
 
-let defaultMoney: any = [
+let defaultMoney: MoneyType[] = [
   { banknotes: 'Dollars', value: 100, number: ' a1234567890' },
   { banknotes: 'Dollars', value: 50, number: ' z1234567890' },
   { banknotes: 'RUBLES', value: 100, number: ' w1234567890' },
@@ -25,10 +25,10 @@ export const moneyFilter = (money: any, filter: any): any => {
 }
 
 function App() {
-  const [money, setMoney] = useState<any>([])
-  const [filterValue, setFilterValue] = useState<any>('')
+  const [money, setMoney] = useState<Array<MoneyType>>(defaultMoney)
+  const [filterValue, setFilterValue] = useState<BanknotesType>('All')
 
-  const filteredMoney = moneyFilter()
+  const filteredMoney = moneyFilter(money, filterValue)
 
   return (
     <div className="App">
